@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    #root{
+      width: 300px;
+      height: 100px;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .item{
+      width: 300px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+      color: white;
+      background-color: white;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">menu-1</div>
+    <div class="item">menu-item-1</div>
+    <div class="item">menu-item-2</div>
+    <div class="item">menu-item-3</div>
+    <div class="item">menu-item-4</div>
+
+  <script>
+    const root = document.getElementById('root');
+    const item = document.getElementsByClassName('item');
+    //console.log(root);
+    //console.dir(item[0]);
+    console.dir(item)
+    let booleanType = true;
+    root.addEventListener('click', function() {
+      if(booleanType === true) {
+        console.log("hello");
+        booleanType = false;
+        for(let index = 0; index < item.length; index++) {
+          item[index].style.backgroundColor = "gray";
+        }
+      } else {
+        console.log('bye');
+        booleanType = true;  
+        for(let index = 0; index < item.length; index++) {
+          item[index].style.backgroundColor = "white";
+          
+        }
+      }
+
+    });
+    
+  </script>
+</body>
+</html>
